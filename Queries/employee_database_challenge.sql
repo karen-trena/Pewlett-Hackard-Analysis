@@ -37,3 +37,19 @@ ON dept_emp.emp_no = titles.emp_no
 WHERE (employees.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 and dept_emp.to_date='9999-01-01'
 order by employees.emp_no;
+-------------------------------
+--extra
+SELECT count(employees.emp_no), titles.title
+--into extra
+FROM employees
+LEFT JOIN titles
+ON employees.emp_no = titles.emp_no
+WHERE (employees.birth_date BETWEEN '1952-01-01' AND '1952-12-31')
+group by titles.title
+
+-------------------------------
+--extraextra
+SELECT count(mentorship_eligibilty.emp_no), mentorship_eligibilty.title
+FROM mentorship_eligibilty
+group by mentorship_eligibilty.title
+
