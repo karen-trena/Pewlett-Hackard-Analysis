@@ -51,12 +51,12 @@ CREATE TABLE dept_emp (
 
 -- 6
 CREATE TABLE titles (
-     titles VARCHAR(4) NOT NULL,
      emp_no INT NOT NULL,
+     title VARCHAR(50) NOT NULL,
      from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-    PRIMARY KEY (titles, emp_no, from_date)
+    PRIMARY KEY (title, emp_no, from_date)
 );
 
 SELECT * FROM departments;
